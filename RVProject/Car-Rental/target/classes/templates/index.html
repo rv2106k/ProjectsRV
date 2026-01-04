@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: head"></head>
+<body>
+<div th:replace="fragments/header :: body">
+    <!-- header fragment will render -->
+</div>
+<div class="container">
+    <h1>Welcome to Car Rental</h1>
+    <p>Cars: <strong th:text="${carCount}">0</strong></p>
+    <p>Customers: <strong th:text="${customerCount}">0</strong></p>
+    <p>Reservations: <strong th:text="${reservationCount}">0</strong></p>
+</div>
+</body>
+</html>
+

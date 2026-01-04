@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/header :: head"></head>
+<body>
+<div th:replace="/fragments/header :: body"></div>
+<div class="container">
+    <h2>Reservations</h2>
+    <a class="btn btn-primary mb-2" href="/reservations/new">New Reservation</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Car</th>
+            <th>Customer</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Total</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="r : ${reservations}">
+            <td th:text="${r.id}">1</td>
+            <td th:text="${r.car.make} + ' ' + ${r.car.model}">Car</td>
+            <td th:text="${r.customer.firstName} + ' ' + ${r.customer.lastName}">Customer</td>
+            <td th:text="${r.startDate}">Start</td>
+            <td th:text="${r.endDate}">End</td>
+            <td th:text="${r.totalPrice}">Total</td>
+            <td th:text="${r.status}">Status</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+

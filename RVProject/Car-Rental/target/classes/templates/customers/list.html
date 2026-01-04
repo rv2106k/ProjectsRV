@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/header :: head"></head>
+<body>
+<div th:replace="/fragments/header :: body"></div>
+<div class="container">
+    <h2>Customers</h2>
+    <a class="btn btn-primary mb-2" href="/customers/new">Add Customer</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="c : ${customers}">
+            <td th:text="${c.id}">1</td>
+            <td th:text="${c.firstName} + ' ' + ${c.lastName}">Name</td>
+            <td th:text="${c.email}">Email</td>
+            <td th:text="${c.phone}">Phone</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+

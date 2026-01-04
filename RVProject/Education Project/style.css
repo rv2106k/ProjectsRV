@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root{
+    --primary: #4a148c;
+    --accent: #7b1fa2;
+    --muted: #666;
+    --bg: #f9f9fb;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    border: none;
+}
+
+.hero {
+    height: 60vh;
+    background: linear-gradient(to right, var(--accent), #ce93d8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero .cta{
+    margin-top: 20px;
+    padding: 12px 22px;
+    background: white;
+    color: var(--primary);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+    background: var(--bg);
+}
+
+.gray {
+    background: #f4f4f4;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.grid {
+    gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.06);
+    text-align: left;
+}
+
+.muted{ color: var(--muted); font-size: 0.95rem; margin-bottom:8px }
+
+.course-card ul{ margin-top:10px }
+
+.teacher-bio p{ margin-top:8px }
+
+.table-wrap{ overflow:auto; max-width:1100px; margin:0 auto }
+
+.schedule-table{ width:100%; border-collapse: collapse; }
+.schedule-table th, .schedule-table td{ padding:12px; text-align:left; border-bottom:1px solid #eee }
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.form-error{ color: #b00020; margin-bottom:10px }
+.success-message{ color: #0b7a0b; margin-top:10px }
+
+.faqs{ max-width:900px; margin:0 auto }
+.faq-item{ margin-bottom:10px }
+.faq-question{ width:100%; text-align:left; padding:12px; border:none; background:#fff; border-radius:6px; box-shadow:0 0 6px rgba(0,0,0,0.04); cursor:pointer }
+.faq-question:focus{ outline:3px solid rgba(74,20,140,0.2) }
+.faq-answer{ padding:10px 14px; background:#fff; border-radius:6px; margin-top:8px }
+
+.testimonials .testimonial{ text-align:left }
+
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 14px 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        background: var(--primary);
+        position: absolute;
+        top: 62px;
+        right: 0;
+        width: 100%;
+        z-index: 60;
+    }
+
+    nav a {
+        padding: 12px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    header[aria-expanded="true"] nav{ display:flex }
+}
+
+/* Utility */
+.sr-only{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
+
+:focus{ outline: 3px solid rgba(74,20,140,0.15); outline-offset:2px }

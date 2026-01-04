@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/header :: head"></head>
+<body>
+<div th:replace="/fragments/header :: body"></div>
+<div class="container">
+    <h2>New Reservation</h2>
+    <form th:action="@{/reservations}" th:object="${reservation}" method="post">
+        <div class="mb-3">
+            <label class="form-label">Customer</label>
+            <select class="form-select" th:field="*{customer.id}">
+                <option th:each="c : ${customers}" th:value="${c.id}" th:text="${c.firstName} + ' ' + ${c.lastName}"></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Car</label>
+            <select class="form-select" th:field="*{car.id}">
+                <option th:each="car : ${cars}" th:value="${car.id}" th:text="${car.make} + ' ' + ${car.model} + ' (' + ${car.plateNumber} + ')' "></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Start Date</label>
+            <input type="date" class="form-control" th:field="*{startDate}" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">End Date</label>
+            <input type="date" class="form-control" th:field="*{endDate}" />
+        </div>
+        <button class="btn btn-primary" type="submit">Reserve</button>
+    </form>
+</div>
+</body>
+</html>
+
